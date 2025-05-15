@@ -32,7 +32,8 @@ if "thresh" not in st.session_state:
 
 # Load and store symptoms.json in session state
 if "symptom_dict" not in st.session_state:
-    with open("../symptoms.json", "r") as s:
+    symptom_path = os.path.join(os.path.dirname(__file__), "..", "symptoms.json")
+    with open(symptom_path, "r") as s:
         st.session_state.symptom_dict = json.loads(s.read())
 
 if "symptom_list_str" not in st.session_state:
