@@ -96,8 +96,8 @@ if "chain" not in st.session_state:
     st.session_state.chain = LLMChain(llm=st.session_state.llm, prompt=st.session_state.prompt)
 
 # Streamlit UI
-st.set_page_config(page_title="GenZ Chatbot", page_icon="🤖")
-st.title("🤖 GenZ Chatbot")
+st.set_page_config(page_title="FTD Chatbot", page_icon="🤖")
+st.title("🤖 FrontoTemporal Dementia Helper Chatbot")
 st.subheader("Choose how you want to start")
 
 user_choice = st.radio("Select an option:", ["Upload an MRI", "Just continue with the symptoms"], index=1)
