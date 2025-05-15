@@ -11,7 +11,7 @@ def symptomtest(user_input):
     load_dotenv()
     os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
-    with open("..\\symptoms.json", "r") as s:
+    with open("../symptoms.json", "r") as s:
         symptom_dict = json.loads(s.read())
 
     # Flatten dictionary to symptom:value string list
