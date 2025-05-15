@@ -1,4 +1,5 @@
 import tensorflow as tf
+import os
 # from PIL import Image
 
 def load_local_image(image, dim):
@@ -14,14 +15,15 @@ def load_local_image(image, dim):
     img = tf.expand_dims(img, axis=0)
     return img
 
-
 def predictftd(file):
-    model = tf.keras.models.load_model("../Models/MainFtd.h5")
+    modelpath = os.path.join(os.path.dirname(__file__), "..", "Models/MainFtd.h5")
+    model = tf.keras.models.load_model(modelpath)
     prediction = model.predict(load_local_image(file,128))
     return prediction[0]
 
 def predictmonth(file):
-    model = tf.keras.models.load_model("../Models/FTD_Month_v1.h5")
+    modelpath = os.path.join(os.path.dirname(__file__), "..", "Models/FTD_Month_v1.h5")
+    model = tf.keras.models.load_model(modelpath)
     prediction = model.predict(load_local_image(file,64))
     return prediction[0]
 
