@@ -1,0 +1,66 @@
+{
+  "Behavioral_and_Personality_Changes": {
+    "Early_Behavioral_Disinhibition (e.g., saying rude things without realizing, touching others inappropriately, interrupting conversations often)": 0.9,
+    "Loss_of_Social_Tact (e.g., making inappropriate jokes, invading personal space, speaking too loudly in quiet settings)": 0.85,
+    "Impulsive_Spending_or_Risky_Behavior (e.g., making large purchases without necessity, engaging in unsafe activities)": 0.8,
+    "Early_Apathy_or_Inertia (e.g., loss of interest in hobbies, not initiating conversation, staying in bed for long hours)": 0.5,
+    "Lack_of_Motivation (e.g., neglecting daily responsibilities, showing no initiative in tasks)": 0.5,
+    "Early_Loss_of_Sympathy_or_Empathy (e.g., not reacting to others' sadness, ignoring emotional needs of family, appearing cold or uncaring)": 0.9,
+    "Emotional_Detachment (e.g., indifferent to significant events, lack of concern for loved ones)": 0.85,
+    "Early_Perseverative_or_Compulsive_Behavior (e.g., repeating the same word or phrase, collecting unnecessary items, following a strict routine obsessively)": 0.8,
+    "Repetitive_Motor_Actions (e.g., tapping fingers continuously, pacing back and forth without purpose)": 0.75,
+    "Hyperorality_and_Dietary_Changes (e.g., overeating sweets, eating non-food items, developing new food cravings)": 0.8,
+    "Craving_Sweets_or_Carbohydrates (e.g., sudden preference for sugary foods, eating excessive bread or pasta)": 0.8
+  },
+  "Cognitive_and_Executive_Deficits": {
+    "Executive_Function_Deficits (e.g., difficulty organizing tasks, trouble planning a trip, unable to follow multi-step instructions)": 0.6,
+    "Difficulty_Multitasking (e.g., unable to cook while talking, struggles to manage multiple errands)": 0.6,
+    "Impaired_Judgment_or_Insight (e.g., spending large sums of money unwisely, trusting strangers, unaware of personal changes)": 0.6,
+    "Lack_of_Awareness_of_Changes (e.g., denying any behavioral issues, unaware of mistakes made)": 0.6,
+    "Difficulty_Memorizing (e.g., forgetting recent conversations, misplacing objects, struggling to recall appointments, struggling to learn stuff)": 0.4
+  },
+  "Language_Difficulties_PPA": {
+    "Agrammatic_or_Nonfluent_Speech (e.g., speaking in short broken sentences like 'go store now', leaving out words)": 0.9,
+    "Choppy_Speech_Patterns (e.g., frequent pauses, incomplete sentences, omitting small words)": 0.9,
+    "Apraxia_of_Speech (e.g., struggling to say familiar words, groping for sounds, saying the wrong sounds in a word)": 0.9,
+    "Difficulty_Articulating_Words (e.g., mispronouncing common words, inconsistent speech errors)": 0.9,
+    "Impaired_Repetition (e.g., unable to repeat simple phrases like 'no ifs ands or buts')": 0.2,
+    "Trouble_Parroting_Phrases (e.g., cannot repeat sentences just heard, difficulty echoing words)": 0.2,
+    "Impaired_Naming (e.g., calling a spoon 'that thing', forgetting common object names)": 0.4,
+    "Word_Finding_Difficulty (e.g., pausing to recall names of familiar objects, using placeholders like 'thing')": 0.4,
+    "Impaired_Single_Word_Comprehension (e.g., not understanding what 'apple' means when asked to pick one)": 1.0,
+    "Misunderstanding_Common_Words (e.g., confusion over simple terms like 'chair' or 'door')": 1.0,
+    "Impaired_Object_Knowledge (e.g., unable to explain how to use a comb, forgetting the function of a phone)": 0.9,
+    "Loss_of_Object_Function_Knowledge (e.g., not knowing what a toothbrush is for, misusing everyday items)": 0.9,
+    "Surface_Dyslexia (e.g., misreading 'yacht' as 'ya-chet', sounding out words instead of recognizing them by sight)": 0.8,
+    "Difficulty_Reading_Irregular_Words (e.g., pronouncing 'colonel' as spelled, struggling with non-phonetic words)": 0.8
+  },
+  "Motor_and_Muscle_Symps_FTD_ALS": {
+    "Limb_Weakness (e.g., frequent dropping of objects, struggling to open jars, leg giving out when walking)": 0.9,
+    "Reduced_Grip_Strength (e.g., difficulty holding utensils, trouble turning doorknobs)": 0.9,
+    "Muscle_Atrophy (e.g., arms or legs looking thinner, visible shrinking of muscles)": 0.9,
+    "Visible_Muscle_Wasting (e.g., noticeable loss of muscle mass in limbs)": 0.9,
+    "Fasciculations (e.g., muscle twitches in arms or legs visible under the skin)": 0.9,
+    "Involuntary_Muscle_Twitches (e.g., brief, spontaneous muscle contractions in hands or feet)": 0.9,
+    "Spasticity (e.g., stiffness in the arms or legs, difficulty bending limbs smoothly)": 0.9,
+    "Muscle_Stiffness (e.g., resistance when moving limbs, tightness in muscles)": 0.9,
+    "Bulbar_Signs (e.g., slurred speech, choking when eating, weak voice)": 0.9,
+    "Swallowing_Difficulties (e.g., coughing during meals, sensation of food sticking in throat)": 0.9
+  },
+  "Other_Observed_Changes": {
+    "Hallucinations (e.g., seeing people who aren't there, hearing voices)": 0.0,
+    "Visual_or_Auditory_Hallucinations (e.g., perceiving nonexistent sounds or images)": 0.0,
+    "Delusions (e.g., believing family members are impostors, thinking someone is out to get them)": 0.0,
+    "False_Beliefs (e.g., insisting on untrue scenarios, paranoia about being watched)": 0.0,
+    "Depression (e.g., feeling hopeless, not enjoying things, crying often)": 0.3,
+    "Persistent_Sadness (e.g., ongoing low mood, lack of interest in activities)": 0.3,
+    "Anxiety (e.g., constant worry, nervousness in normal situations)": 0.2,
+    "Excessive_Worry (e.g., overthinking minor issues, restlessness)": 0.2,
+    "Irritability_or_Agitation (e.g., snapping at others easily, getting annoyed over small things)": 0.5,
+    "Mood_Swings (e.g., sudden changes from calm to angry without clear reason)": 0.5,
+    "Sleep_Disturbance (e.g., waking up frequently at night, sleeping too much or too little)": 0.1,
+    "Altered_Sleep_Patterns (e.g., insomnia, excessive daytime sleepiness)": 0.1,
+    "Rigidity_or_Parkinsonian_Features (e.g., slow walking, stiff arms that don't swing, tremors)": 0.2,
+    "Slowed_Movements (e.g., shuffling gait, reduced facial expressions)": 0.2
+  }
+}

@@ -1,0 +1,9 @@
+langchain-groq
+langchain_core
+python-dotenv
+streamlit
+langchain_community
+langserve
+tensorflow
+opencv-python
+numpy
