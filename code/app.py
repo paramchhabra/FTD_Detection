@@ -125,7 +125,7 @@ if user_input:
     with st.chat_message("user"):
         st.markdown(user_input)
 
-    response = st.session_state.chain.run({
+    response = st.session_state.chain.invoke({
         "input": user_input,
         "thresh": st.session_state.thresh,
         "symptoms": st.session_state.symptom,
