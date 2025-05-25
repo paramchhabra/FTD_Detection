@@ -41,42 +41,45 @@ if "symptom_list_str" not in st.session_state:
             symptomlist.append(f"{symptom}:{value}")
     st.session_state.symptom_list_str = ", ".join(symptomlist)
 
-# Load LLM and prompt
+# Load LLM
 if "llm" not in st.session_state:
     st.session_state.llm = ChatGroq(model_name="meta-llama/llama-4-maverick-17b-128e-instruct", temperature=0)
 
+# Setup memory
 if "memory" not in st.session_state:
     st.session_state.memory = ConversationBufferMemory(return_messages=True, memory_key="chat_history")
 
+# Create prompt template
+prompt = ChatPromptTemplate.from_messages([
+    ("system",
+     """You are a medical expert specializing in Frontotemporal Dementia (FTD).
+Your role is to assist in the clinical interpretation of FTD based on MRI findings and symptom profiles.
+Inputs You May Receive:
+MRI_FTD_Probability: A float value between 0 and 1 indicating the likelihood of FTD based on MRI scan analysis.
+Month_Probability: A mapping of months (e.g., Month 1 to Month 12) to the probability that the MRI scan corresponds to that specific disease month.
+Symptoms: A dictionary where each symptom is labeled with its relevance, or specificity to FTD.
+The Current Symptoms uploaded by the user are: {symptoms}
+FTD_Score: The Current Score is {FTD_score}.
+A threshold value {thresh} is used to determine whether the case should be flagged for further evaluation.
+
+Guidelines:
+Do not reveal backend scores directly. Use them only for internal logic.
+If most symptoms are unrelated, reassure the user.
+If the score is high and symptoms are relevant, suggest professional follow-up.
+You may use monthprob if confidence is high and FTD is likely.
+
+Only use this list to help gather more symptoms if the user is confused:
+{symptom_list_str}"""),
+    ("human", "{input}")
+])
+
+# Create conversation chain
 if "conversation_chain" not in st.session_state:
-    prompt = ChatPromptTemplate.from_messages([
-        ("system",
-        """You are a medical expert specializing in Frontotemporal Dementia (FTD).
-        Your role is to assist in the clinical interpretation of FTD based on MRI findings and symptom profiles.
-        Inputs You May Receive:
-        MRI_FTD_Probability: A float value between 0 and 1 indicating the likelihood of FTD based on MRI scan analysis.
-        Month_Probability: A mapping of months (e.g., Month 1 to Month 12) to the probability that the MRI scan corresponds to that specific disease month.
-        Symptoms: A dictionary where each symptom is labeled with its relevance, or specificity to FTD.
-        The Current Symptoms uploaded by the user are: {symptoms}
-        FTD_Score: The Current Score is {FTD_score}.
-        A threshold value {thresh} is used to determine whether the case should be flagged for further evaluation.
-
-        Guidelines:
-        Do not reveal backend scores directly. Use them only for internal logic.
-        If most symptoms are unrelated, reassure the user.
-        If the score is high and symptoms are relevant, suggest professional follow-up.
-        You may use monthprob if confidence is high and FTD is likely.
-
-        Only use this list to help gather more symptoms if the user is confused:
-        {symptom_list_str}
-        """),
-        ("human", "{input}")
-    ])
-    
     st.session_state.conversation_chain = ConversationChain(
         llm=st.session_state.llm,
         prompt=prompt,
         memory=st.session_state.memory,
+        input_variables=["input", "symptoms", "FTD_score", "thresh", "symptom_list_str"],
         verbose=False
     )
 
@@ -141,8 +144,6 @@ if user_input:
         symptoms=st.session_state.symptom,
         thresh=st.session_state.thresh,
         FTD_score=FTD_score,
-        ftdprob=st.session_state.ftdprob,
-        monthprob=st.session_state.monthprob,
         symptom_list_str=st.session_state.symptom_list_str
     )
 
