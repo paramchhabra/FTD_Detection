@@ -1,3 +1,5 @@
+# Fix: Explicitly pass `chat_history` in the `.invoke()` call from memory.
+
 from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -127,6 +129,7 @@ if user_input:
 
     response = st.session_state.chain.invoke({
         "input": user_input,
+        "chat_history": st.session_state.memory.buffer,
         "thresh": st.session_state.thresh,
         "symptoms": st.session_state.symptom,
         "FTD_score": FTD_score,
